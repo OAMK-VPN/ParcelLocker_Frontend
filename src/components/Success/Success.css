@@ -1,0 +1,23 @@
+.Success {
+  width: 500px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.Success img {
+  width: 100px;
+  height: 100px;
+  margin: 20px 0;
+}
+
+.Success h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.Success p {
+  font-size: 16px;
+  margin: 20px 0;
+}
