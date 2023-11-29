@@ -4,7 +4,6 @@ import CodePanel from './code-verifier/CodePanel';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Button, DropdownMenu, img } from 'react-bootstrap'
 import ParcelFinder from './parcel-finder/ParcelFinder';
-import Success from "./success/Success";
 import RoleSelector from "./role-selector/RoleSelector";
 
 const MainPage = () => {
@@ -15,7 +14,6 @@ const MainPage = () => {
       <Routes>
         <Route path="/" exact element={<ParcelFinder />} />
         <Route path="code" exact element={<CodePanel />} />
-        <Route path="success" exact element={<Success />} />
         <Route path="role" exact element={<RoleSelector />} />
       </Routes>
       </BrowserRouter>

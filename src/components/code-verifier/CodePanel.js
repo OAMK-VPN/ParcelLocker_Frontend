@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import CodeCell from "./CodeCell";
 import styles from './CodePanel.module.css'
-import Success from "../success/Success";
 import { baseUrl } from '../../utils/constants';
 
 const CodePanel = () => {
@@ -54,7 +53,7 @@ const CodePanel = () => {
 
   return (
     <div className={styles.CodePanel}>
-      {status && (<h2>{status}</h2>)}
+      {status && (<h2 className={styles.h2}>{status}</h2>)}
       <div className={styles.searchBox}>
         <input type="number" placeholder="code" className={styles.searchinput} value={codeNumber} maxLength={4} readOnly />
         <button onClick={handleOK}>OK</button>

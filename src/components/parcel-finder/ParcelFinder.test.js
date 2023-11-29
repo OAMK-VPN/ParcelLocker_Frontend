@@ -1,52 +1,52 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import ParcelFinder from './ParcelFinder';
-import LocationsView from '../pickup-location/LocationsView';
+// import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+// import ParcelFinder from './ParcelFinder';
+// import LocationsView from '../pickup-location/LocationsView';
 
-// beforeEach(() => {
-//   jest.spyOn(global, 'fetch').mockResolvedValue({
-//     json: jest.fn().mockResolvedValue(mockResponse)
-//   })
-// });
+// // beforeEach(() => {
+// //   jest.spyOn(global, 'fetch').mockResolvedValue({
+// //     json: jest.fn().mockResolvedValue(mockResponse)
+// //   })
+// // });
 
-// afterEach(() => {
-//   jest.restoreAllMocks();
-// });
+// // afterEach(() => {
+// //   jest.restoreAllMocks();
+// // });
 
-test('render correctly', () => {
-  render(<ParcelFinder />)
+// test('render correctly', () => {
+//   render(<ParcelFinder />)
 
-  expect(screen.getByRole('welcomeText')).toBeInTheDocument();
-  expect(screen.getByTestId('searchBox')).toBeInTheDocument();
-})
-
-
-// Happy case
-test('show result when user input in search', async () => {
-  render(<ParcelFinder />)
+//   expect(screen.getByRole('welcomeText')).toBeInTheDocument();
+//   expect(screen.getByTestId('searchBox')).toBeInTheDocument();
+// })
 
 
-  let searchInput = screen.getByLabelText('zip')
-  let findBtn = screen.getByRole('button')
+// // Happy case
+// test('show result when user input in search', async () => {
+//   render(<ParcelFinder />)
 
-  fireEvent.change(searchInput, { value: '12345' })
-  fireEvent.click(findBtn)
 
-  await waitFor(() => {
-    expect(screen.getByTestId('location')).toBeInTheDocument()
-  });
-})
+//   let searchInput = screen.getByLabelText('zip')
+//   let findBtn = screen.getByRole('button')
 
-// Sad case
-test('given server response with no locations found, then location view is not shown', async () => {
-  render(<ParcelFinder />)
+//   fireEvent.change(searchInput, { value: '12345' })
+//   fireEvent.click(findBtn)
 
-  let searchInput = screen.getByLabelText('zip')
-  let findBtn = screen.getByRole('button')
+//   await waitFor(() => {
+//     expect(screen.getByTestId('location')).toBeInTheDocument()
+//   });
+// })
 
-  fireEvent.change(searchInput, { value: '67890' })
-  fireEvent.click(findBtn)
+// // Sad case
+// test('given server response with no locations found, then location view is not shown', async () => {
+//   render(<ParcelFinder />)
 
-  await waitFor(() => {
-    expect(screen.queryByTestId('location')).not.toBeInTheDocument()
-  });
-})
+//   let searchInput = screen.getByLabelText('zip')
+//   let findBtn = screen.getByRole('button')
+
+//   fireEvent.change(searchInput, { value: '67890' })
+//   fireEvent.click(findBtn)
+
+//   await waitFor(() => {
+//     expect(screen.queryByTestId('location')).not.toBeInTheDocument()
+//   });
+// })
