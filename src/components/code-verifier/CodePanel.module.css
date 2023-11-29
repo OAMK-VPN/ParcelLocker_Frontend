@@ -9,8 +9,12 @@
 
 .searchBox {
   display: flex;
-  align-items: center;
-  margin-top: 3vh;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    gap: 5px;
+    width: 500px;
+    margin: 0 auto;
 }
 
 .searchBox button {
@@ -22,8 +26,8 @@
   border-radius: 5px; 
   cursor: pointer; 
   transition: border-color 0.5s;
-  padding: 3.5%;
-  width: auto;
+  width: 45px;
+  height: 45px;
 }
 
 .searchBox button:hover {
@@ -38,6 +42,8 @@
   font-weight: 500;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
+  font-size: 20px;
+  width: 300px;
 }
 
 .searchinput:hover {
