@@ -1,0 +1,103 @@
+.CodePanel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  justify-content: center;
+}
+
+.CodePanel h2 {
+  text-align: center;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  gap: 5px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.searchBox button {
+  background-color: #163760;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  border: 0.5px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.5s;
+  width: 45px;
+  height: 45px;
+}
+
+.searchBox button:hover {
+  background-color: #ffffff;
+  color: #163760;
+  border-color: #163760;
+  box-shadow: 1px 1px 10px 2.5px rgba(0, 0, 0, 0.2);
+}
+
+.searchinput {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  font-size: 20px;
+  width: 300px;
+}
+
+.searchinput:hover {
+  box-shadow: 1px 1px 10px 2.5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+input {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.buttons_container {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  padding-bottom: 3vh;
+
+}
+
+.bottom_button {
+  background-color: #FAFAFA;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  color: #163760;
+  border: none;
+  border-radius: 5px;
+  padding: 1.05vh;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+
+.bottom_button:hover {
+  box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.3);
+  color: #255ba2;
+
+}
+
+@media (max-width: 800px) {
+  .buttons_container {
+    gap: 5%;
+  }
+
+  .bottom_button {
+    padding-inline: 1.2vh;
+  }
+
+}

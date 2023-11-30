@@ -1,0 +1,26 @@
+.choose_role_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.drop_off_button,
+.pick_up_button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.drop_off_button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pick_up_button {
+  background-color: #f0f0f0;
+  color: #000;
+}

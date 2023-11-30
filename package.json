@@ -1,38 +1,65 @@
 {
-  "name": "posti-locker-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "posti-locker-app",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.17.0",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router-dom": "^6.20.0",
+		"react-scripts": "5.0.1",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"eject": "react-scripts eject",
+		"test:build": "cross-env NODE_ENV=test npx webpack --config webpack-test.config.js --mode development",
+		"test:watch": "cross-env NODE_ENV=test npx webpack --config webpack-test.config.js --mode development --watch",
+		"test": "npm run test:build && jasmine-browser-runner runSpecs --browser=chrome",
+		"test:serve": "npm run test:build && jasmine-browser-runner",
+		"test:karma": "npm run karma --single-run",
+		"karma": "cross-env NODE_ENV=test node_modules/karma/bin/karma start config/karma.conf.js"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@babel/core": "^7.23.3",
+		"@babel/register": "^7.22.15",
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-react-app": "^10.0.1",
+		"cross-env": "^7.0.3",
+		"ignore-styles": "^5.0.1",
+		"jasmine": "^5.1.0",
+		"jasmine-ajax": "^4.0.0",
+		"jasmine-browser-runner": "^2.3.0",
+		"jasmine-core": "^5.1.1",
+		"jsdom": "^22.1.0",
+		"karma": "^6.4.2",
+		"karma-chrome-launcher": "^3.2.0",
+		"karma-jasmine": "^5.1.0",
+		"karma-sourcemap-loader": "^0.4.0",
+		"karma-webpack": "^5.0.0",
+		"puppeteer": "^21.5.2",
+		"react-test-renderer": "^18.2.0",
+		"webpack-cli": "^5.1.4",
+		"whatwg-fetch": "^3.6.19"
+	}
 }
