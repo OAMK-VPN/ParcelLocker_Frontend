@@ -6,6 +6,9 @@ import { baseUrl } from '../../utils/constants';
 const ParcelFinder = () => {
   const [zipCode, setZipCode] = useState('');
   const [locations, setLocations] = useState([]);
+  const [searchStatus, setSearchStatus] = useState('');
+  
+  const isInputOk = zipCode.length === 5
 
   const limitInput = (event) => {
     var key = event.keyCode || event.charCode;
@@ -29,7 +32,12 @@ const ParcelFinder = () => {
     })
       .then(response => response.json())
       .then(data => {
-        setLocations(data)
+        if (data.length > 0) {
+          setSearchStatus("ok");
+          setLocations(data)
+        } else {
+          setSearchStatus('No locker found close to the entered postal code')
+        }
       })
       .catch(console.error)
   }
@@ -44,10 +52,10 @@ const ParcelFinder = () => {
         </div>
 
         <div className={styles.searchBox} data-testid="searchBox">
-          <input aria-label="zip" name="zip" type="number" placeholder="ZIP Code" className={styles.searchinput} onKeyDown={limitInput} onChange={(event) => setZipCode(event.target.value)} />
-          <button onClick={findZIPCode}>Find</button>
+          <input aria-label="zip" name="zip" type="number" placeholder="ZIP Code" className={styles.searchinput} onKeyDown={limitInput} onChange={(event) => setZipCode(event.target.value)} value={zipCode} />
+          <button onClick={findZIPCode} disabled={!isInputOk}>Find</button>
         </div>
-        { locations.length > 0 ? (<LocationsView locations={locations}/>) : null}
+        {(locations.length > 0 && searchStatus == 'ok') ? (<LocationsView locations={locations} />) : (<p>{searchStatus}</p>)}
       </div>
     </div>
   );

@@ -4,12 +4,11 @@
   width: 100%;
   height: 100%;
   padding: 20px;
+  justify-content: center;
 }
 
-.h2 {
-  font-size: 30px;
-  align-items: center;
-  justify-content: center;
+.CodePanel h2 {
+  text-align: center;
 }
 
 .searchBox {

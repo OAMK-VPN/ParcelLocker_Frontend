@@ -2,28 +2,20 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './CodeCell.module.css'
 
-const CodeCell = ({ setCode, code }) => {
-  const [value, setValue] = useState(null)
+const CodeCell = ({ code, setCode }) => {
   const navigate = useNavigate()
 
-
   const handleClick = (element) => {
-    const value = element.target.textContent;
-
-
-    setValue(element.target.textContent)
+    
     if (element.target.textContent === "C") {
       setCode(""); // Clear the code
-      code = ""; //update the code prop
     }
     else if (element.target.textContent === "Close") {
       handleCancel()
-      //if (element.target.textContent === "Cancel"), Navigate back to MainPage
     }
     else {
       if (!code) {
         setCode(null)
-
       }
       else if (code.length >= 4) {
         return //set limit input
@@ -37,11 +29,6 @@ const CodeCell = ({ setCode, code }) => {
       return prevState + element.target.textContent;
     })
   }
-
-  console.log(value)
-
-  console.log(typeof code)
-
 
   const handleCancel = () => {
     navigate("/")
