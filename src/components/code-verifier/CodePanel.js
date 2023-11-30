@@ -30,30 +30,30 @@ const CodePanel = () => {
         })
       })
       .then(response => response.json())
-      .catch(error => {
-        console.error(error)
-        setStatus(error)
-      })
       .then(data => {
-        if (data.isOpen) {
+        if (data.open) {
           setStatus("Successfully open a cabinet")
           handleSuccess();
         } else {
           setStatus("The provided code is not correct")
         }
       })
+      .catch(error => {
+          console.error(error)
+          setStatus(error)
+        })
 
   }
 
   const handleSuccess = () => {
     setTimeout(() => {
       navigate("/")
-    }, 3000)
+    }, 8000)
   }
 
   return (
     <div className={styles.CodePanel}>
-      {status && (<h2 className={styles.h2}>{status}</h2>)}
+      {status && (<h2>{status}</h2>)}
       <div className={styles.searchBox}>
         <input type="number" placeholder="code" className={styles.searchinput} value={codeNumber} maxLength={4} readOnly />
         <button onClick={handleOK}>OK</button>
