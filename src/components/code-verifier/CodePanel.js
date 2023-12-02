@@ -31,7 +31,7 @@ const CodePanel = () => {
       })
       .then(response => response.json())
       .then(data => {
-        if (data.open) {
+        if (data.isOpen) {
           setStatus("Successfully open a cabinet")
           handleSuccess();
         } else {

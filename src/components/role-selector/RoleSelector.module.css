@@ -2,22 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto;
+  margin: 25vh auto;
 }
 
 .drop_off_button,
 .pick_up_button {
   display: inline-block;
+  width: 260px;
+  height: 100px;
   padding: 10px 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 10px;
   cursor: pointer;
+  font-size: 16px;
+  box-shadow: 1px 1px 10px 2.5px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
 }
 
 .drop_off_button {
   background-color: #007bff;
   color: #fff;
+  margin-bottom: 40px;
 }
 
 .pick_up_button {

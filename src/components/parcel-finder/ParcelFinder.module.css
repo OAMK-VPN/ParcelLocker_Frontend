@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Nunito:wght@300;400;500;600;700;800;900;1000&family=Raleway:wght@600;700;800;900&display=swap');
 
-.parent_container {
+.container {
 	display: flex;
 	flex-direction: column;
 	height: 98vh;
@@ -39,7 +39,7 @@
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 1000;
-	font-size: clamp(36px, 8vw, 52px);
+	font-size: clamp(80px, 8vw, 52px);
 	letter-spacing: 0.05em;
 }
 
@@ -75,7 +75,7 @@
 	cursor: pointer;
 	transition: border-color 0.5s;
 	padding: 3.5%;
-	width: auto;
+	width: 80px;
 }
 
 .searchBox button:hover {
@@ -95,6 +95,8 @@
 	font-weight: 500;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 	transition: box-shadow 0.3s ease;
+	width: 280px;
+	height: 30px;
 }
 
 .searchinput:hover {
@@ -106,6 +108,7 @@ input {
 	margin-right: 10px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
+	font-size: 700;
 }
 
 .buttons_container {

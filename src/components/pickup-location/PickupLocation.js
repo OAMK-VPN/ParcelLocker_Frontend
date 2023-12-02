@@ -9,16 +9,17 @@ export default function PickupLocation({ id, name, address }) {
   const navigate = useNavigate();
   const handleClick = () => {
     localStorage.setItem("lockerId", id);
-    navigate("role", {state: {lockerId: id}})
+    navigate("role")
   }
 
   return (
     <div className={styles.location} key={id} data-testid={`location-${id}`}>
-      <div>{name}</div>
-      <div>{address}</div>
-      <div>
-        {/* Replace anchor element with router Link */}
-        <button onClick={handleClick}>Choose</button>
+      <div className={styles.info}>
+        <div className={styles.name}>{name}</div>
+        <div>{address}</div>
+      </div>
+      <div className={styles.buttonContainer}>
+        <button className={styles.button} onClick={handleClick}>Choose</button>
       </div>
     </div>
   );
