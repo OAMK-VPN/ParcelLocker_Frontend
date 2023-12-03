@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./PickupLocation.module.css";
-import {Link, Routes, Route, useNavigate} from "react-router-dom"
-import CodePanel from "../code-verifier/CodePanel";
+import {useNavigate} from "react-router-dom"
 
 /* This component is used to display a single pickup loction in the pickup location view. */
 
