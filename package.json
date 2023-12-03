@@ -17,9 +17,9 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "babel-plugin-react-css-modules": "^5.2.6",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "cross-env": "^7.0.3",
-    "msw": "^2.0.9"
+    "nock": "^13.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

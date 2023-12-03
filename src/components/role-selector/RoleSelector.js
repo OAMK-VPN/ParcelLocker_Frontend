@@ -13,7 +13,7 @@ const RoleSelector = () => {
             state: { role: "drop-off" }
           })
         }}>
-          Drop of the parcel
+          Drop off the parcel
         </button>
       </div>
       <div>
