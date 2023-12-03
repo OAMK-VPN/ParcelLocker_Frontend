@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, act, waitFor } from '../../utils/test-utils';
+import { render, screen, fireEvent, waitFor } from '../../utils/test-utils';
 import RoleSelector from './RoleSelector';
 import { BrowserRouter } from 'react-router-dom';
 

@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styles from "./LocationsView.module.css";
-import { getAllLocations } from "./locations";
 import PickupLocation from "./PickupLocation";
 
 const LocationsView = ({locations}) => {

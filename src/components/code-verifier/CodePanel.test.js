@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { render, screen, fireEvent, act, waitFor } from '@testing-library/react';
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import CodePanel from './CodePanel';
 import nock from 'nock';
-import { BrowserRouter, MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
