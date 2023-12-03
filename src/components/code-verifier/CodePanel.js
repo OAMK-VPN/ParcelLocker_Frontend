@@ -5,7 +5,7 @@ import styles from './CodePanel.module.css'
 import { baseUrl } from '../../utils/constants';
 
 const CodePanel = () => {
-  const [codeNumber, setCodeNumber] = useState(null);
+  const [codeNumber, setCodeNumber] = useState("");
   const { role } = useLocation().state;
   const [status, setStatus] = useState("");
 
