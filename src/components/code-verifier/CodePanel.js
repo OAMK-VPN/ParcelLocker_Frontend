@@ -32,7 +32,7 @@ const CodePanel = () => {
       .then(response => response.json())
       .then(data => {
         if (data.isOpen) {
-          setStatus("Successfully open a cabinet")
+          setStatus("Successfully! Door " + data.num + " is open")
           handleSuccess();
         } else {
           setStatus("The provided code is not correct")
