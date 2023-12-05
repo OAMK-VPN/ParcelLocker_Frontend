@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import styles from './CodeCell.module.css'
 
@@ -9,22 +9,22 @@ const CodeCell = ({ code, setCode }) => {
     
     if (element.target.textContent === "C") {
       setCode(""); // Clear the code
+      return;
     }
     else if (element.target.textContent === "Close") {
       handleCancel()
     }
     else {
-      if (!code) {
-        setCode(null)
-      }
-      else if (code.length >= 4) {
+      if (code.length >= 4) {
         return //set limit input
       }
     }
 
     setCode((prevState) => {
-      if (prevState === null) {
+      if (prevState === "") {
         return element.target.textContent
+      } else if (isNaN(Number(prevState))) {
+        return "";
       }
       return prevState + element.target.textContent;
     })
