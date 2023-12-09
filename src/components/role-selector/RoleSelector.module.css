@@ -5,13 +5,30 @@
   margin: 25vh auto;
 }
 
-.drop_off_button,
-.pick_up_button {
+.drop_off_button {
   display: inline-block;
-  width: 260px;
+  width: 200px;
   height: 100px;
   padding: 10px 20px;
-  border: 1px solid #ccc;
+  background-color: #163760;
+  color: #ffffff;
+  margin-bottom: 50px;
+  border: 1px solid #163760;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 1px 1px 10px 2.5px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+
+}
+.pick_up_button {
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #163760;
+  border: 1px solid #ffffff;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
@@ -19,13 +36,19 @@
   font-weight: 700;
 }
 
-.drop_off_button {
-  background-color: #007bff;
-  color: #fff;
-  margin-bottom: 40px;
+
+.drop_off_button:hover,
+.drop_off_button:active
+{
+  background-color: #0d2038;
+  border: 1px solid #0f2540;
 }
 
-.pick_up_button {
-  background-color: #f0f0f0;
-  color: #000;
+
+
+.pick_up_button:hover,
+.pick_up_button:active 
+{
+  background: #f8f8f8;
+  border: 1px solid #f7f7f7;
 }

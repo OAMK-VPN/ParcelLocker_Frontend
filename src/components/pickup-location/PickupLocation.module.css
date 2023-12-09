@@ -1,9 +1,11 @@
 .location {
   display: flex;
-  flex: 1 1 0;
   flex-direction: column;
-  height: 200px;
-  margin: 20px;
+  font-family: 'Nunito', sans-serif;
+	font-weight: 500;
+  height: 175px;
+  width: 225px;
+  margin: 3vh 10px;
   padding: 0 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -12,11 +14,13 @@
 }
 
 .location:hover {
-  border: 1px solid #163760;
+  cursor: pointer;
+  border: 1px solid #1c477a;
+  box-shadow: 0 0 5px 1px rgba(26, 65, 112, 0.736);
 }
 
 .info {
-  margin-top: 20px;
+  margin-top: 5%;
 }
 
 .buttonContainer {
@@ -27,8 +31,9 @@
 }
 
 .button {
-  background-color: black;
+  background-color: #1c477a;
   color: white;
+  border: 1px solid #1c477a;
   border-radius: 8px;
   font-weight: bolder;
   align-self: flex-end;
@@ -36,7 +41,31 @@
   padding: 8px;
 }
 
+.button:hover {
+  cursor: pointer;
+  color: #1c477a;
+  background-color: #ffffff;
+}
+
+.button:active {
+  cursor: pointer;
+  color: #1c477a;
+  background-color: #ffffff;
+}
+
+
 .name {
   font-weight: bolder;
-  height: 45px;
+}
+
+.address {
+  margin-top: 5%;
+}
+
+@media (max-width: 700px) {
+	.location {
+    width: 35vw;
+    font-size: 14px;
+	}
+
 }

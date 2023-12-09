@@ -32,7 +32,7 @@ const CodePanel = () => {
       .then(response => response.json())
       .then(data => {
         if (data.isOpen) {
-          setStatus("Successfully! Door " + data.num + " is open")
+          setStatus("Door " + data.num + " is open")
           handleSuccess();
         } else {
           setStatus("The provided code is not correct")
@@ -40,7 +40,7 @@ const CodePanel = () => {
       })
       .catch(error => {
           console.error(error)
-          setStatus(error)
+          setStatus("The provided code is not correct")
         })
 
   }
@@ -48,18 +48,28 @@ const CodePanel = () => {
   const handleSuccess = () => {
     setTimeout(() => {
       navigate("/")
-    }, 8000)
+    }, 5000)
   }
 
   return (
     <div className={styles.CodePanel}>
-      {status && (<h2>{status}</h2>)}
+      <div className={styles.CodePanel_child}>
+      {status && (<p className={styles.status}>{status}</p>)}
       <div className={styles.searchBox}>
-        <input type="number" placeholder="code" className={styles.searchinput} value={codeNumber} maxLength={4} readOnly />
+        <input 
+        type="number" 
+        placeholder="----" 
+        className={styles.searchinput} 
+        value={codeNumber} 
+        maxLength={4} 
+        pattern="[0-9]{4}"
+        readOnly
+        required />
         <button onClick={handleOK}>OK</button>
       </div>
       <div className={styles.buttons_container}>
         <CodeCell code={codeNumber} setCode={setCodeNumber} />
+      </div>
       </div>
     </div>
   )

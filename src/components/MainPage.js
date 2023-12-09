@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styles from './MainPage.module.css'
 import CodePanel from './code-verifier/CodePanel';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ParcelFinder from './parcel-finder/ParcelFinder';
@@ -8,7 +7,7 @@ import RoleSelector from "./role-selector/RoleSelector";
 const MainPage = () => {
 
   return (
-    <div className={styles.parent_container}>
+    <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" exact element={<ParcelFinder />} />

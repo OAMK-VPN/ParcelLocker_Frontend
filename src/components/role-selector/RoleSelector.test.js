@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 it('should navigate to code verifier when drop off', async () => {
   render(<RoleSelector />)
-
   const dropOff = screen.getByText(/Drop off/);
   fireEvent.click(dropOff)
 

@@ -15,7 +15,7 @@ export default function PickupLocation({ id, name, address }) {
     <div className={styles.location} key={id} data-testid={`location-${id}`}>
       <div className={styles.info}>
         <div className={styles.name}>{name}</div>
-        <div>{address}</div>
+        <div className={styles.address}>{address}</div>
       </div>
       <div className={styles.buttonContainer}>
         <button className={styles.button} onClick={handleClick}>Choose</button>

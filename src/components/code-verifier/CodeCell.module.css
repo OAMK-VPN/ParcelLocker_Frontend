@@ -1,9 +1,9 @@
 .CodeCell {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
   height: 100%;
-  padding: 20px;
+  margin-top: 10px;
 }
 
 .buttons_container {
@@ -15,18 +15,26 @@
 }
 
 .buttons {
-  background-color: #163760;
+  background-color: #1a4375eb;
   color: white;
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
   font-size: 18px;
   border: 0.5px solid transparent;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
   transition: border-color 0.5s;
   padding: 20px;
   width: 100px;
-  height: 100px;
+  height: 84px;
+}
+
+.buttons:hover {
+  background-color: #1a4375;
+}
+.buttons:active 
+{
+  background-color: #163760;
 }
 
 

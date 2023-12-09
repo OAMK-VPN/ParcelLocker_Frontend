@@ -8,22 +8,11 @@ const ParcelFinder = () => {
   const [locations, setLocations] = useState([]);
   const [searchStatus, setSearchStatus] = useState('');
   
-  const isInputOk = zipCode.length === 5
 
-  const limitInput = (event) => {
-    var key = event.keyCode || event.charCode;
 
-    // 8 is the backspace key, 46 is the delete key allow user to delete the last character
-    if (key === 8 || key === 46) {
-      return false;
-    }
-    if (event.target.value.length >= 5) {
-      event.preventDefault();
-      event.stopPropagation()
-    }
-  }
 
-  const findZIPCode = () => {
+  const findZIPCode = (e) => {
+    e.preventDefault();
     fetch(`${baseUrl}/api/lockers/zipcode/${zipCode}`, {
       method: 'GET',
       headers: {
@@ -36,7 +25,7 @@ const ParcelFinder = () => {
           setSearchStatus("ok");
           setLocations(data)
         } else {
-          setSearchStatus('No locker found close to the entered postal code')
+          setSearchStatus('No lockers found here. Please enter a different ZIP')
         }
       })
       .catch(console.error)
@@ -44,20 +33,36 @@ const ParcelFinder = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.parent_mainText}>
-        <div role="welcomeText" className={styles.mainText}>
-          <p><span className={styles.trackWord}>Pickup</span></p>
-          <p><span className={styles.andWord}>your</span></p>
-          <p><span className={styles.traceWord}>Parcel</span></p>
-        </div>
+        <div className = {styles.parent_mainText}>
+          <div role = "welcomeText" className = {styles.mainText}>
+            <p><span className = {styles.trackWord}>Pickup</span></p>
+            <p><span className = {styles.andWord}>Your</span></p>
+            <p><span className = {styles.traceWord}>Parcel</span></p>
+          </div>
+
+
+          
+
 
         <div className={styles.searchBox} data-testid="searchBox">
-          <input aria-label="zip" name="zip" type="number" placeholder="ZIP Code" className={styles.searchinput} onKeyDown={limitInput} onChange={(event) => setZipCode(event.target.value)} value={zipCode} />
-          <button onClick={findZIPCode} disabled={!isInputOk}>Find</button>
+          <form onSubmit={findZIPCode}  className={styles.searchBox}>
+          <input 
+              aria-label="zip" 
+              name="zip" 
+              type="text" 
+              placeholder="ZIP Code" 
+              className={styles.searchinput} 
+              onChange={(event) => setZipCode(event.target.value)} 
+              value={zipCode}
+              pattern="[0-9]{5}" 
+              required
+            />
+          <button type = "submit">Find</button>
+          </form>
         </div>
-        {(locations.length > 0 && searchStatus == 'ok') ? (<LocationsView locations={locations} />) : (<p>{searchStatus}</p>)}
+        {(locations.length > 0 && searchStatus === 'ok') ? (<LocationsView locations={locations} />) : (<p className={styles.status}>{searchStatus}</p>)}
+        </div>
       </div>
-    </div>
   );
 }
 
