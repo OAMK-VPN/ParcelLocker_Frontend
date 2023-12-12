@@ -15,16 +15,9 @@ npm install / pnpm install
 3. Update Endpoints in `.env` (if needed)
 
 ## Usage
-1. Run the server
+1. Run the client
 ```sh
-cd server
-mvn spring-boot:run
-```
-2. Run the client
-```sh
-cd client/customer
-cd client/driver
-cd client/locker
+cd  ParcelLocker_Frontend
 npm run dev
 ```
 
