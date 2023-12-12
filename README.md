@@ -9,7 +9,7 @@ git clone https://github.com/OAMK-VPN/ParcelLocker_Frontend.git
 ```
 2. Go to the folder and install dependencies `(npm i / pnpm i)`
 ```sh
-cd  ParcelLocker_Frontend
+cd ParcelLocker_Frontend
 npm install / pnpm install
 ```
 3. Update Endpoints in `.env` (if needed)
