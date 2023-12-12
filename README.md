@@ -5,7 +5,7 @@
 ## Installation
 1. Clone the repo
 ```sh
-git clone https://github.com/OAMK-VPN/APost.git
+git clone https://github.com/OAMK-VPN/ParcelLocker_Frontend.git
 ```
 2. Go to the folder and install dependencies `(npm i / pnpm i)`
 ```sh
